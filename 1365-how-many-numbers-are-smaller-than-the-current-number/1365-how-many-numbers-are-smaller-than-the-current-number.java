@@ -11,7 +11,7 @@ class Solution {
 //                 }
 //             }
 //         }
-        
+        //2nd attempt :- optimised, using count sort
         int[] count = new int[101];
         int[] res = new int[nums.length];
         
