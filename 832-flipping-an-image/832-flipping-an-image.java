@@ -11,10 +11,14 @@ class Solution {
                 row[i] = row[j];
                 row[j] = temp;
                 
-                }
+                // row[i] ^= 1;
+                // row[j] ^= 1;
                 
                 
             }
+                
+                
+        }
         
         for(int i = 0; i<image.length;i++){
             for(int j = 0; j<image.length;j++){
