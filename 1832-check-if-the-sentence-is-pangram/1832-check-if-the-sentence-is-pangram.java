@@ -1,44 +1,33 @@
 class Solution {
     public boolean checkIfPangram(String sentence) {
-        //1st attempt very wrong :(
+        //1st attempt was wrong
+        
+        //2nd Attempt => after seeing the solution =>
         
 //         boolean[] checkArr = new boolean[26];
-//         boolean check = true;
         
-//         // for(int i = 97; i<=122; i++){
-//         //     for(int j=0; j<= sentence.length(); j++){
-//         //         if(sentence.contains(i)){
-//         //             checkArr[i-97] = true;
-//         //         }
-//         //     }
-//         //     if(checkArr[i-97] == false)
-//         //         break;
-//         // }
-        
-//         for(int i = 97; i<=122; i++){
-//             if(sentence.contains[i]){
-//                 checkArr[i-97] = true;
-//             }
+//         // mapping true/false in a new array for each letter. 
+//         for(char c : sentence.toCharArray()){
+//             checkArr[c - 'a'] = true;
 //         }
         
-//         for(boolean chk : checkArr){
-//             check *= chk;
+//         //if there is any false, then we can return false
+//         for(boolean checkLetter : checkArr){
+//             if(!checkLetter) return false;
 //         }
-//        return check;
         
-        //2nd Attempt => after seeing the solution
+//         return true;
         
-        boolean[] checkArr = new boolean[26];
+        //3rd attempt =>after seeing another solution
+        //doesnt requires an extra array
         
-        for(char c : sentence.toCharArray()){
-            checkArr[c - 'a'] = true;
+        int seen = 0;
+        for(char ch : sentence.toCharArray()){
+            int ci = ch - 'a';
+            seen = seen | (1 << ci);
         }
         
-        for(boolean checkLetter : checkArr){
-            if(!checkLetter) return false;
-        }
-        
-        return true;
+        return seen == ((1<<26) -1);
         
     }
 }
