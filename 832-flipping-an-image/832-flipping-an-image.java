@@ -43,7 +43,13 @@ class Solution {
         int n = image.length;
         
         for(int[] row : image){
+            //i*2<n helps to consider even when n is odd
+            //using this it considers all the starting from [0] to the middle index 
             for(int i =0; i *2 < n; i++){
+                
+                //the trick here is that when two values which need to be swapped
+                //are same, then they dont need to be swapped, because
+                //after inverting the number, they become same as the original
                 if(row[i] == row[n-i-1])
                     row[i] = row[n-i-1]  ^= 1;
             }
