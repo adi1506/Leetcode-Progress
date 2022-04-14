@@ -18,11 +18,22 @@ class Solution {
         
 //         return res;
         
-        //2nd attempt : optimised
+        //2nd attempt : optimised -> TC O(n)
+        
+//         int res = 0;
+//         //for each element finding if its even by its range
+//         for(int num : nums){
+//             if((num > 9 && num < 100) || (num >999 && num <10000) || (num == 100000))
+//                 res++;
+//         }
+        
+//         return res;
+        
+        //3rd attempt : finding number of digits using log
         
         int res = 0;
         for(int num : nums){
-            if((num > 9 && num < 100) || (num >999 && num <10000) || (num == 100000))
+            if(Math.floor(Math.log10(num) + 1) % 2 == 0)
                 res++;
         }
         
