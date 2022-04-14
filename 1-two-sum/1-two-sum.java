@@ -8,11 +8,11 @@ class Solution {
                 if(nums[i]+ nums[j] == target){
                     arr[0] = i;
                     arr[1] = j;
-                    break;
+                    return arr;
                 }
             }
         }
-        return arr;
+        return null;
         
         //2nd attempt : 
         
