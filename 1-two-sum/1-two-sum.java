@@ -1,6 +1,6 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        //1st attempt : brute force
+        //1st attempt : brute force : simple iteration : TC O(n^2)
         
         int[] arr = new int[2];
         for(int i = 0; i < nums.length; i++){
@@ -13,5 +13,8 @@ class Solution {
             }
         }
         return arr;
+        
+        //2nd attempt : 
+        
     }
 }
