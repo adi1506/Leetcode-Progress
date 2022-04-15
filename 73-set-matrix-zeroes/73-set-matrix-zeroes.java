@@ -32,30 +32,32 @@ class Solution {
 //         }
         
         //2nd attempt : taking 2 dummy 1D arrays and storing the position of 0's.
+        //TC : O(M*N)
+        //SC : O(M+N)
         int M = mat.length;
         int N = mat[0].length;
         int[] arrM = new int[M];
         int[] arrN = new int[N];
         
-        for(int i = 0; i<M ; i++){
-            arrM[i] = -1;
-        }
-        for(int i = 0; i<N ; i++){
-            arrN[i] = -1;
-        }
+        // for(int i = 0; i<M ; i++){
+        //     arrM[i] = -1;
+        // }
+        // for(int i = 0; i<N ; i++){
+        //     arrN[i] = -1;
+        // }
         
         for(int i = 0; i < M; i++){
             for(int j = 0; j < N; j++){
                 if(mat[i][j] == 0){
-                    arrM[i] = 0;
-                    arrN[j] = 0;
+                    arrM[i] = -1;
+                    arrN[j] = -1;
                 }
             }
         }
         
         for(int i = 0; i < M; i++){
             for(int j = 0; j < N; j++){
-                if(mat[i][j] != 0 && (arrM[i] == 0 || arrN[j] == 0)){
+                if(mat[i][j] != 0 && (arrM[i] == -1 || arrN[j] == -1)){
                     mat[i][j] = 0;
                 }
             }
