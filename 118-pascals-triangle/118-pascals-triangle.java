@@ -1,5 +1,7 @@
 class Solution {
     public List<List<Integer>> generate(int numRows) {
+        //TC : O(n^2)
+        //SC : O(n^2)
         List<List<Integer>> allRows = new ArrayList<List<Integer>>();
         List<Integer> row,prev = null;
         
