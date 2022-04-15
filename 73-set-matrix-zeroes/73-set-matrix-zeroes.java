@@ -57,21 +57,45 @@ class Solution {
 //         }
         
         //3rd attempt : most optimal approach, using no extra space
+        // TC : O(2*M*N)
+        // SC : O(1)
+        
+//         int M = mat.length;
+//         int N = mat[0].length;
+//         int col = 1;
+        
+//         for(int i = 0; i < M; i++){
+//             if(mat[i][0] == 0) col = 0;
+//             for(int j = 1; j < N; j++){
+//                 if(mat[i][j] == 0)
+//                     mat[i][0] = mat[0][j] = 0;
+//             }
+//         }
+        
+//         for(int i = M-1; i>=0; i--){
+//             for(int j = N-1; j>=1; j--){
+//                 if(mat[i][0] == 0 || mat[0][j] == 0)
+//                     mat[i][j] = 0;
+//             }
+//             if(col == 0)
+//                 mat[i][0] = 0;
+//         }
         
         int M = mat.length;
         int N = mat[0].length;
+        
         int col = 1;
         
-        for(int i = 0; i < M; i++){
+        for(int i = 0; i<M ; i++){
             if(mat[i][0] == 0) col = 0;
-            for(int j = 1; j < N; j++){
+            for(int j = 1; j<N; j++){
                 if(mat[i][j] == 0)
                     mat[i][0] = mat[0][j] = 0;
             }
         }
         
-        for(int i = M-1; i>=0; i--){
-            for(int j = N-1; j>=1; j--){
+        for(int i = M-1; i >= 0; i--){
+            for(int j = N-1; j >=1; j--){
                 if(mat[i][0] == 0 || mat[0][j] == 0)
                     mat[i][j] = 0;
             }
