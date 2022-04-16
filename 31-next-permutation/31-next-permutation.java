@@ -29,7 +29,7 @@
 class Solution {
     public void nextPermutation(int[] nums) {
         //edge case
-        if(nums.length <= 1 || nums == null ) return;
+        // if(nums.length <= 1 || nums == null ) return;
         
         //nums[i] <= nums[i+1];
         
