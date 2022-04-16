@@ -13,7 +13,11 @@ class Solution {
 //         }
         
 //         return profit;
-        int min = nums[0];
+        
+        //2nd attempt : optimal soltuion
+        //TC O(n)
+        //SC O(1)
+        int min = Integer.MAX_VALUE;
         int profit = 0;
         
         for(int i = 0; i<nums.length; i++){
