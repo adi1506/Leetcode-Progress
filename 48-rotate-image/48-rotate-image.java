@@ -9,14 +9,9 @@ class Solution {
         
         for(int i = 0; i< n; i++){
             for(int j = 0; j < n/2; j++){
-                swap2(matrix,i,j);
-                
-                
+                swap2(matrix,i,j);       
             }
-        }
-        
-        System.out.println(Arrays.deepToString(matrix));
-        
+        }    
     }
     
     public void swap1(int[][] arr, int i, int j){
