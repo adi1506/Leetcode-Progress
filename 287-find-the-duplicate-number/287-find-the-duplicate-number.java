@@ -20,6 +20,7 @@ class Solution {
         // return arrSum-sum;
         
         //3rd attempt: sort the array and if arr[i] == arr[i+1] then arr[i] is duplicate
+        //TC: O(nlogn + n)
         Arrays.sort(nums);
         for(int i = 0; i<nums.length-1; i++){
             if(nums[i] == nums[i+1])
