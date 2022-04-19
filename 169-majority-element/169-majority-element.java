@@ -20,15 +20,24 @@ class Solution {
         // return 0;
         
         //2nd attempt : Moore's Voting Algorithm
+        //TC : O(n)
+        //SC : O(1)
         
-        int cnt = 0;
-        int el = 0;
+//         int cnt = 0;
+//         int el = 0;
         
-        for(int i = 0; i < nums.length; i++){
-            if(cnt == 0) el = nums[i];
-            if(el == nums[i]) cnt++;
-            else cnt--;
-        }
-        return el;
+//         for(int i = 0; i < nums.length; i++){
+//             if(cnt == 0) el = nums[i];
+//             if(el == nums[i]) cnt++;
+//             else cnt--;
+//         }
+//         return el;
+        
+        //attempt 3 : using hashmap (need to do it later)
+        
+        //attempt 4 : using sorting
+        Arrays.sort(nums);
+        return nums[nums.length/2];
+        
     }
 }
