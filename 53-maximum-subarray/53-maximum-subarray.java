@@ -36,20 +36,30 @@ class Solution {
         
         //3rd attempt : O(n)
         
-        int sum = 0;
-        int max = Integer.MIN_VALUE;
+//         int sum = 0;
+//         int max = Integer.MIN_VALUE;
         
-        for(int i = 0; i < nums.length; i++){
-            sum += nums[i];
+//         for(int i = 0; i < nums.length; i++){
+//             sum += nums[i];
             
-            max = Math.max(sum,max);
+//             max = Math.max(sum,max);
             
-            if(sum < 0){
-                sum = 0;
-            }
+//             if(sum < 0){
+//                 sum = 0;
+//             }
+//         }
+        
+//         return max;
+        
+        int csum = nums[0];
+        int osum = nums[0];
+        
+        for(int i = 1; i<nums.length; i++){
+            csum = Math.max(csum+nums[i],nums[i]);
+            osum = Math.max(osum,csum);
         }
         
-        return max;
+        return osum;
         
         
         
