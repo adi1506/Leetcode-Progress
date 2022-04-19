@@ -38,10 +38,10 @@ class Solution {
             else
                 start = mid+1;
         }
-        if(start < n && matrix[row][start] == target)
-            return true;
-        else return false;
+        // if(start < n && matrix[row][start] == target)
+        //     return true;
+        // else return false;
         // System.out.println(row);
-        // return false;
+        return false;
     }
 }
