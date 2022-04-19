@@ -46,7 +46,8 @@ class Solution {
 //         return false;
         
         //3rd attempt : performing binary search directly on 2D matrix
-        
+        //TC: O(log(m*n))
+        //SC : O(1)
         int m = matrix.length;
         int n = matrix[0].length;
         
@@ -54,7 +55,7 @@ class Solution {
         int high = m*n -1;
         
         while(low <= high){
-            int mid = (low + high)/2;
+            int mid = low + (high - low)/2;
             if(target == matrix[mid/n][mid%n])
                 return true;
             else if(target < matrix[mid/n][mid%n])
