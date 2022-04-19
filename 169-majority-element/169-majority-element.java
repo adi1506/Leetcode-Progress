@@ -1,6 +1,6 @@
 class Solution {
     public int majorityElement(int[] nums) {
-        //1st attempt : brute force
+        //1st attempt : brute force : TC : O(n^2) ; SC : O(1)
         int n = nums.length;
         int prev = Integer.MIN_VALUE;
         int count = 0;
