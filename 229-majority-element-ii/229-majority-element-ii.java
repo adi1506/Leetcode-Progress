@@ -42,11 +42,11 @@ class Solution {
             }
             else if(count1 == 0){
                 el1 = num;
-                count1 = 1;
+                count1++;
             }
             else if(count2 == 0){
                 el2 = num;
-                count2 = 1;
+                count2++;
             }
             else{
                 count1--;
@@ -65,6 +65,8 @@ class Solution {
         if(countEl2 > n/3) maj.add(el2);
         
         return maj;
+        
+        //atempt 3 : need to do this with hashmap
         
     }
 }
