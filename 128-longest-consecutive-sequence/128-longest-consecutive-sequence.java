@@ -1,6 +1,7 @@
 class Solution {
     public int longestConsecutive(int[] nums) {
         //1st attempt : brute force
+        // TC: O(nlogn + n)
         if(nums.length == 0)
             return 0;
 
