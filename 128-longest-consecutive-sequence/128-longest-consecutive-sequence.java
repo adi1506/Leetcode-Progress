@@ -25,6 +25,8 @@ class Solution {
 //         return maxCons + 1;
         
         //2nd attempt : Hashset
+        // TC : O(n)
+        // SC : O(n)
         HashSet<Integer> hs = new HashSet<Integer>();
         for(int num : nums){
             hs.add(num);
