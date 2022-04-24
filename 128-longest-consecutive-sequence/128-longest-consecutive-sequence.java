@@ -55,7 +55,6 @@ class Solution {
 //         return longestStreak;
         
         Set<Integer> hs = new HashSet<Integer>();
-        
         for(int num : nums){
             hs.add(num);
         }
@@ -74,8 +73,6 @@ class Solution {
                 
                 longestStreak = Math.max(longestStreak,currentStreak);
             }
-            
-            
         }
         
         return longestStreak;
