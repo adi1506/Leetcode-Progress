@@ -27,7 +27,35 @@ class Solution {
         //2nd attempt : Hashset
         // TC : O(n)
         // SC : O(n)
-        HashSet<Integer> hs = new HashSet<Integer>();
+        
+        //adding all the elements from array to the hashset
+//         HashSet<Integer> hs = new HashSet<Integer>();
+//         for(int num : nums){
+//             hs.add(num);
+//         }
+        
+//         int longestStreak = 0;
+        
+        
+//         for(int num : nums){
+//             if(!hs.contains(num-1)){
+//                 int currentNum = num;
+//                 int currentStreak = 1;
+                
+//                 while(hs.contains(currentNum+1)){
+//                     currentNum++;
+//                     currentStreak++;
+//                 }
+                
+//                 longestStreak = Math.max(longestStreak,currentStreak);
+//             }
+            
+//         }
+        
+//         return longestStreak;
+        
+        Set<Integer> hs = new HashSet<Integer>();
+        
         for(int num : nums){
             hs.add(num);
         }
@@ -47,10 +75,10 @@ class Solution {
                 longestStreak = Math.max(longestStreak,currentStreak);
             }
             
+            
         }
         
         return longestStreak;
-        
         
     }
 }
