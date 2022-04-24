@@ -2,8 +2,8 @@ class Solution {
     public int lengthOfLongestSubstring(String s) {
         int n = s.length();
         
-        if(n == 0 || n == 1)
-            return s.length();
+        // if(n == 0 || n == 1)
+        //     return s.length();
         int ls = 0;
         for(int i = 0; i < n; i++){
             Set<Character> hs = new HashSet<Character>();
