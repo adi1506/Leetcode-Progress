@@ -52,27 +52,50 @@ class Solution {
         
         //3rd attempt
         
+//         int n = s.length();
+        
+//         if(n == 0 || n == 1)
+//             return s.length();
+        
+        
+//         int maxans = Integer.MIN_VALUE;
+//         Set < Character > set = new HashSet < > ();
+//         int l = 0;
+//         for (int r = 0; r < n; r++) // outer loop for traversing the string
+//         {
+//             if (set.contains(s.charAt(r))) //if duplicate element is found
+//             {
+//                 while (l < r && set.contains(s.charAt(r))) {
+//                     set.remove(s.charAt(l));
+//                     l++;
+//                 }
+//             }
+//             set.add(s.charAt(r));
+//             maxans = Math.max(maxans, r - l + 1);
+//         }
+//         return maxans;
+        
+        
         int n = s.length();
         
-        if(n == 0 || n == 1)
-            return s.length();
+        if(n <= 1)
+            return n;
         
-        
-        int maxans = Integer.MIN_VALUE;
-        Set < Character > set = new HashSet < > ();
+        int maxans = 0;
         int l = 0;
-        for (int r = 0; r < n; r++) // outer loop for traversing the string
-        {
-            if (set.contains(s.charAt(r))) //if duplicate element is found
-            {
-                while (l < r && set.contains(s.charAt(r))) {
-                    set.remove(s.charAt(l));
+        Set<Character> hs = new HashSet<Character>();
+        
+        for(int r = 0; r < n ; r++){
+            if(hs.contains(s.charAt(r))){
+                while(l < r && hs.contains(s.charAt(r))){
+                    hs.remove(s.charAt(l));
                     l++;
                 }
             }
-            set.add(s.charAt(r));
-            maxans = Math.max(maxans, r - l + 1);
+            hs.add(s.charAt(r));
+            maxans = Math.max(maxans,r-l+1);
         }
+        
         return maxans;
         
     }
