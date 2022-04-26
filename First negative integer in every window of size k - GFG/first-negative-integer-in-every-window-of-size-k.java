@@ -86,7 +86,7 @@ class Compute {
                 if(negArr.size() > 0) arr[k] = negArr.get(0);
                 else arr[k] = 0;
                 
-                if(A[i] < 0 && negArr.contains(A[i])){
+                if(A[i] < 0 ){
                     negArr.remove(A[i]);
                 }
                 i++;
