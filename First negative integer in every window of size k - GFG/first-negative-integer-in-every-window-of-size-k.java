@@ -46,20 +46,53 @@ class Compute {
     
     public long[] printFirstNegativeInteger(long A[], int N, int K)
     {
-        long[] arr = new long[N-K+1];
-        int k = 0;
         //brute force
-        for(int i = 0; i < N-K+1 ; i++){
-            for(int j = i; j<i+K;j++){
-                if(A[j] < 0){
-                    arr[k] = A[j];
-                    break;
-                }
-                else{
-                    arr[k] = 0;
-                }
+        //TC : O(N^2)
+        //SC : O(1)
+        
+        // long[] arr = new long[N-K+1];
+        // int k = 0;
+        // for(int i = 0; i < N-K+1 ; i++){
+        //     for(int j = i; j<i+K;j++){
+        //         if(A[j] < 0){
+        //             arr[k] = A[j];
+        //             break;
+        //         }
+        //         else{
+        //             arr[k] = 0;
+        //         }
+        //     }
+        //     k++;
+        // }
+        
+        // return arr;
+        
+        //Using sliding window
+        
+        long[] arr = new long[N-K+1];
+        List<Long> negArr = new ArrayList<Long>(K);
+        
+        int i =0, j=0,k=0;
+        
+        while(j < N){
+            if(A[j] < 0){
+                negArr.add(A[j]);
             }
-            k++;
+            
+            if(j-i+1 < K){
+                j++;
+            }
+            else if(j-i+1 == K){
+                if(negArr.size() > 0) arr[k] = negArr.get(0);
+                else arr[k] = 0;
+                
+                if(A[i] < 0 && negArr.contains(A[i])){
+                    negArr.remove(A[i]);
+                }
+                i++;
+                j++;
+                k++;
+            }
         }
         
         return arr;
