@@ -35,18 +35,39 @@ class GFG
 class Solution{
     static int maximumSumSubarray(int K, ArrayList<Integer> Arr,int N){
         // code here
-        // int i =0, j = 0;
         
-        int maxSum = 0;
+        //Attempt 1 : Brute Force
+        //TC: O(N^2)
+        //SC: O(1)
         
-        for(int i = 0; i < N-K+1; i++){
-            int sum = 0;
-            for(int j = i; j < i+K; j++){
-                sum += Arr.get(j);
+        // int maxSum = 0;
+        
+        // for(int i = 0; i < N-K+1; i++){
+        //     int sum = 0;
+        //     for(int j = i; j < i+K; j++){
+        //         sum += Arr.get(j);
+        //     }
+        //     maxSum = Math.max(maxSum,sum);
+        // }
+        
+        // return maxSum;
+        
+        //Attempt 2 : using sliding window
+        
+        int i =0, j = 0, sum = 0, maxSum = 0;
+        
+        while(j < N){
+            sum += Arr.get(j);
+            if(j-i+1 < K){
+                j++;
             }
-            maxSum = Math.max(maxSum,sum);
+            else if(j-i+1 == K){
+                maxSum = Math.max(maxSum, sum);
+                sum -= Arr.get(i);
+                i++;
+                j++;
+            }
         }
-        
         return maxSum;
     }
 }
