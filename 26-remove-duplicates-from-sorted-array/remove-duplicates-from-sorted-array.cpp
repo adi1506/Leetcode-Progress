@@ -8,7 +8,7 @@ public:
         for(int i = 0; i<n; i++){
             if(arr[i] != uni){
                 uni = arr[i];
-                swap(arr[i], arr[s]);
+                arr[s] = uni;
                 s++;
             }
         }
