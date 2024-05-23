@@ -3,15 +3,13 @@ public:
     int removeDuplicates(vector<int>& arr) {
         int n = arr.size();
         int s = 0;
-        int uni = INT_MIN;
 
         for(int i = 0; i<n; i++){
-            if(arr[i] != uni){
-                uni = arr[i];
-                arr[s] = uni;
+            if(arr[i] != arr[s]){
+                arr[s+1] = arr[i];
                 s++;
             }
         }
-        return s;
+        return s+1;
     }
 };
