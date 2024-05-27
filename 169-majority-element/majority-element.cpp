@@ -40,6 +40,8 @@ public:
         return -1;
     }
 
+
+    //method3 : Moore's Voting algo
     int method3(vector<int>& arr, int n){
         int el;
         int count = 0;
