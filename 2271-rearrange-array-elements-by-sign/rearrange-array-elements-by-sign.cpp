@@ -17,10 +17,9 @@ public:
                 negArr.push_back(arr[i]);
             }
         }    
-        arr.clear();
         for(int i = 0;i<n/2;i++){
-            arr.push_back(posArr[i]);
-            arr.push_back(negArr[i]);
+            arr[2*i] = posArr[i];
+            arr[2*i + 1] = negArr[i];
         }
         return arr;
     }
