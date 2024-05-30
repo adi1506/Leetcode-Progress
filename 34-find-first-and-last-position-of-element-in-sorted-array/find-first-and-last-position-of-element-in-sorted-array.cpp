@@ -2,51 +2,53 @@ class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
         int n = nums.size();
-        int fIndex = -1;
-        int lIndex = -1;
-
-        findFirst(nums, n, target, fIndex);
-        findLast(nums, n, target, lIndex);
-
-        return {fIndex, lIndex};
-        
+        int first = findFirst(nums, n, target);
+        int last = findLast(nums, n, target);
+        return {first,last};
     }
 
-    void findFirst(vector<int>& arr, int n, int target, int &fIndex){
+    int findFirst(vector<int> &arr, int n, int target){
         int s = 0;
         int e = n-1;
-        int mid = s + (e-s)/2;
-        while(s <= e){
+        int mid  = s+ (e-s)/2;
+        int ansIndex = -1;
+
+        while(s<=e){
             if(arr[mid] == target){
-                fIndex = mid;
+                ansIndex = mid;
                 e = mid -1;
             }
             else if(arr[mid] < target){
                 s = mid +1;
             }
-            else if(arr[mid] > target){
+            else{
                 e = mid -1;
             }
             mid = s + (e-s)/2;
         }
+        return ansIndex;
     }
 
-    void findLast(vector<int>& arr, int n, int target, int &lIndex){
+    int findLast(vector<int> &arr, int n, int target){
         int s = 0;
         int e = n-1;
-        int mid = s + (e-s)/2;
-        while(s <= e){
+        int mid  = s+ (e-s)/2;
+        int ansIndex = -1;
+
+        while(s<=e){
             if(arr[mid] == target){
-                lIndex = mid;
+                ansIndex = mid;
                 s = mid +1;
             }
             else if(arr[mid] < target){
                 s = mid +1;
             }
-            else if(arr[mid] > target){
+            else{
                 e = mid -1;
             }
             mid = s + (e-s)/2;
         }
+        return ansIndex;
     }
 };
+
