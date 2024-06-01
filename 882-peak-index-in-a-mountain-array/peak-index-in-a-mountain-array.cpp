@@ -1,5 +1,6 @@
 class Solution {
 public:
+
     int peakIndexInMountainArray(vector<int>& arr) {
         int n = arr.size();
         int s = 0; 
@@ -7,16 +8,33 @@ public:
         int mid = s + (e-s)/2;
         int peakIndex = 0;
 
+        // while(s<=e){
+        //     if(arr[mid] < arr[mid+1]){
+        //         s = mid +1;
+        //     }
+        //     else{
+        //         peakIndex = mid;
+        //         e = mid - 1;
+        //     }
+        //     mid = s+ (e-s)/2;
+        // }
+
         while(s<=e){
-            if(arr[mid] < arr[mid+1]){
+            if(mid+1 <n && arr[mid] < arr[mid+1]){
                 s = mid +1;
             }
-            else{
-                peakIndex = mid;
+            else if(mid+1 <n && arr[mid] < arr[mid-1]){
                 e = mid - 1;
+            }
+            else{
+                return mid;
             }
             mid = s+ (e-s)/2;
         }
-        return peakIndex;
+        return -1;
+
+    
     }
+
+    
 };
