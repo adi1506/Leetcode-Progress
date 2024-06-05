@@ -23,9 +23,10 @@ public:
         //decoding
         string ans = "";
         for(int i = 0; i<message.length(); i++){
-            char msgChar = message[i];
-            char mappedChar = mapping[msgChar];
-            ans.push_back(mappedChar);
+            // char msgChar = message[i];
+            // char mappedChar = mapping[msgChar];
+            // ans.push_back(mappedChar);
+            ans.push_back(mapping[message[i]]);
         }
         return ans;
     }
