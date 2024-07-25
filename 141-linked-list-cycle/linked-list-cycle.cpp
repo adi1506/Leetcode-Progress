@@ -8,7 +8,8 @@
  */
 class Solution {
 public:
-    bool hasCycle(ListNode *head) {
+
+    bool method1(ListNode* &head){
         unordered_map<ListNode*, bool> mapping;
         ListNode* temp = head;
 
@@ -22,5 +23,9 @@ public:
             temp = temp->next;
         }
         return false;
+    }
+
+    bool hasCycle(ListNode *head) {
+        return method1(head);
     }
 };
